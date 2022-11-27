@@ -1,0 +1,24 @@
+{
+  "name": "a04_workspace",
+  "version": "1.0.0",
+  "description": "This assignment will help you stand up a web API using Express and the module that you produced for a03.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a04-mayather.git"
+  },
+  "author": "mayather",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a04-mayather/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-fall/a04-mayather#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimalist": "^1.0.0"
+  }
+}
