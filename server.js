@@ -1,10 +1,10 @@
 //dependencies
-import express from "express"
-import minimist from "minimist"
-import { roll } from './lib/roll.js'
+import express from "express";
+import minimist from "minimist";
+import { roll } from './lib/roll.js';
 
-const app = express()
-const args = minimist(process.argv.slice(2))
+const app = express(2);
+const args = minimist(process.argv.slice(2));
 
 app.use(express.urlencoded({extended: true}));
 
@@ -16,11 +16,6 @@ app.get('/app/', (req, res) => {
     res.type('html')
     res.status(200).send('200 OK');
 });
-
-//404 NOT FOUND
-app.use((req, res) => {
-    res.status(404).send("404 NOT FOUND")
-})
 
 //roll default dice
 app.get('/app/roll/', (req, res) => {
@@ -49,6 +44,11 @@ app.get('/app/roll/:sides/:dice/', (req, res) => {
 app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)));
 });
+
+//404 NOT FOUND
+app.use((req, res) => {
+    res.status(404).send("404 NOT FOUND")
+})
 
 app.listen(port);
 
